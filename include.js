@@ -18,25 +18,34 @@ limitations under the License.
  * acts exactly as part of the current document. */
 (function() {
   "use strict";
-  var includeProto = Object.create(HTMLElement.prototype);
-  includeProto.attachedCallback = function() {
-    this.link = document.createElement('link');
-    this.link.setAttribute('rel', 'import');
-    this.link.setAttribute('href', this.getAttribute('href'));
-    this.link.onload = this.loaded.bind(this);
-    this.link.onerror = function(e) {
-      console.error(e);
-    }
-    document.head.appendChild(this.link);
-  };
-  includeProto.loaded = function(e) {
-    var imported = this.link.import;
-    this.link.parentNode.removeChild(this.link);
-    var parent = this.parentNode;
-    for (var elem = imported.body.firstChild; elem; elem = elem.nextSibling) {
-      parent.insertBefore(elem.cloneNode(true), this);
-    }
-    parent.removeChild(this);
-  };
-  document.registerElement('spec-include', {prototype: includeProto});
+
+  var includeProto = Object.create(HTMLElement.prototype, {
+    attachedCallback: {
+      value: function() {
+        this.link = document.createElement('link');
+        this.link.setAttribute('rel', 'import');
+        this.link.setAttribute('href', this.getAttribute('href'));
+        this.link.onload = this.loaded.bind(this);
+        this.link.onerror = function(e) {
+          console.error(e);
+        }
+        document.head.appendChild(this.link);
+      },
+    },
+    loaded: {
+      value: function() {
+        var imported = this.link.import;
+        this.link.parentNode.removeChild(this.link);
+        var parent = this.parentNode;
+        for (var elem = imported.body.firstChild;
+             elem;
+             elem = elem.nextSibling) {
+          parent.insertBefore(elem.cloneNode(true), this);
+        }
+        parent.removeChild(this);
+      },
+    },
+
+  });
+  document.registerElement('spec-include', { prototype: includeProto });
 })();

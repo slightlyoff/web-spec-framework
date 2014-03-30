@@ -17,13 +17,24 @@ limitations under the License.
 
 <polymer-element name="spec-toc">
   <template>
+    <link rel="stylesheet" href="base.css">
     <style>
       :host { display: block; }
-      nav > ol { font-weight: bold; }
-      ol { font-weight: normal; padding-left: 0; margin-left: 0; }
+      nav > ol {
+        font-weight: bold;
+        background-color: #eee;
+      }
+      ol {
+        font-weight: normal;
+        padding-left:0;
+        margin-left: 0;
+        font-family: 'Open Sans', sans-serif;
+      }
 
       /* Browsers don't support ::marker or display:marker, so emulate it. */
-      li { list-style-type: none; }
+      li {
+        list-style-type: none;
+      }
       .marker { display: inline-block; }
 
       li .marker { width: 2em; text-align: left; }
@@ -35,12 +46,14 @@ limitations under the License.
       li li li li .marker { width: 4.5em; }
     </style>
     <nav>
-      <h1>Contents</h1>
+      <h2>Table of Contents</h2>
       <template bind="" id="hierarchy">
         <template if="{{sections.length > 0}}">
           <ol>
             <template repeat="{{sections}}">
-              <li><span class="marker">{{elem.sec_num}}</span><a href="#{{elem.id}}">{{title.textContent}}</a><template bind="" ref="hierarchy"
+              <li>
+                <span class="marker"><!-- {{elem.sec_num}} --></span>
+                <a href="#{{elem.id}}">{{title.textContent}}</a><template bind="" ref="hierarchy"
               ></template></li>
             </template>
           </ol>
