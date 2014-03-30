@@ -18,7 +18,7 @@ limitations under the License.
     // Hierarchy :: [{ elem: Element, title: H1, sections: Hierarchy }]
     sections: [],
 
-    // Updated with the list of <cxx-clause> elements in the document each
+    // Updated with the list of <spec-clause> elements in the document each
     // time such an element is attached or detached.
     clauses: [],
 

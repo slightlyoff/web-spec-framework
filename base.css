@@ -1,17 +1,7 @@
-/*
-body {
-  margin: 0 auto;
-  padding: 0;
-  line-height: 1.4em;
-  font-family: 'Ovo', serif;
-  width: 60em;
-}
-*/
-
 body {
   padding: 2em 1em 2em 70px;
   margin: 0;
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: black;
   background: white;
   background-position: top left;
@@ -20,6 +10,12 @@ body {
   background-image: url(//www.w3.org/StyleSheets/TR/logo-ED);
   line-height: 1.4em;
 }
+
+:link { color: #00C; background: transparent }
+:visited { color: #609; background: transparent }
+a:active { color: #C00; background: transparent }
+
+a:link img, a:visited img { border-style: none } /* no border on img links */
 
 figure {
   width: 600px;
@@ -124,3 +120,16 @@ dt, dd {
   margin-top: 0;
   margin-bottom: 0;
 }
+
+.warning:before {
+  content: "WARNING: ";
+  font-weight: bold;
+}
+
+.warning {
+  padding: 10px 10px;
+  width: 100%;
+  background: #fffaba;
+  box-sizing: border-box;
+}
+
