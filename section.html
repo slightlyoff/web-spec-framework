@@ -21,16 +21,42 @@ limitations under the License.
   <template>
     <style>
       :host { display: block; }
-      :host:target {background-color: inherit;}
-      :host:target > section > h1 {background-color: #fed;}
+      :host:target { background-color: inherit; }
+      :host:target > section > h1 { background-color: #fed; }
       /* @polyfill header > h1 */
-      ::content h1 { display: inline; font-size: 100%; }
-      header { font-weight: bold; margin-top: 20px; margin-bottom: 20px; }
-      header::after { clear:both; display: block; content: " "; height: 0 }
+      ::content h1 {
+        display: inline; font-size: 100%;
+      }
+      header {
+        font-weight: bold;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      header::after {
+        clear:both;
+        display: block;
+        content: " ";
+        height: 0;
+      }
+      .section-number, .anchor > a {
+        color: #005A9C;
+      }
+      .anchor {
+        padding-right: 1em;
+        font-size: 0.8em;
+        float:right;
+        text-decoration: none;
+      }
     </style>
 
     <section>
-      <header><span class="section-number">{{sec_num}}</span> <content select="h1"></content> <span style="float:right"><a href="#{{id}}">[{{id}}]</a></span></header>
+      <header>
+        <span class="section-number">{{sec_num}}</span>
+        <content select="h1"></content>
+        <span class="anchor">
+          <a style="text-decoration: none;" href="#{{id}}">&para;</a>
+        </span>
+      </header>
       <content></content>
     </section>
   </template>

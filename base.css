@@ -1,9 +1,24 @@
+/*
 body {
   margin: 0 auto;
   padding: 0;
   line-height: 1.4em;
   font-family: 'Ovo', serif;
   width: 60em;
+}
+*/
+
+body {
+  padding: 2em 1em 2em 70px;
+  margin: 0;
+  font-family: sans-serif;
+  color: black;
+  background: white;
+  background-position: top left;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-image: url(//www.w3.org/StyleSheets/TR/logo-ED);
+  line-height: 1.4em;
 }
 
 figure {
@@ -18,8 +33,9 @@ figcaption {
 
 h1, h2, h3, h4 {
   font-family: 'Open Sans', sans-serif;
-  color: #333;
+  color: #005A9C;
   padding: 0;
+  margin: 1.5em 0 0.3em 0;
 }
 
 h1 {
@@ -32,12 +48,8 @@ h2, h3 {
   margin: 1.5em 0 0.3em 0;
 }
 
-h1, h2, h3, h4 {
-  color: #005A9C;
-}
-
 a {
-  color: Black;
+  color: black;
 }
 
 code {
@@ -100,7 +112,15 @@ code > del {
 }
 
 var {
-  font-size: 0.8em;
   color: #005A9C;
   font-style: normal;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dt, dd {
+  margin-top: 0;
+  margin-bottom: 0;
 }
