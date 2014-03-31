@@ -8,14 +8,22 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-image: url(//www.w3.org/StyleSheets/TR/logo-ED);
-  line-height: 1.4em;
+  line-height: 1.5em;
+  font-size: 13px;
 }
 
 :link { color: #00C; background: transparent }
 :visited { color: #609; background: transparent }
 a:active { color: #C00; background: transparent }
 
-a:link img, a:visited img { border-style: none } /* no border on img links */
+a:link img,
+a:visited img {
+  border: none;
+}
+
+.logo > a {
+  border-bottom: none;
+}
 
 figure {
   width: 600px;
@@ -133,3 +141,27 @@ dt, dd {
   box-sizing: border-box;
 }
 
+dfn {
+  font-style: normal;
+  font-weight: bold;
+  background-color: #f9f9f9;
+  padding: 0 2px;
+  outline: 1px solid #eee;
+}
+
+dfn.no-references {
+  background-color: #ffefef;
+}
+
+dfn:target, a:target {
+  background-color: #FFFF91;
+}
+
+a {
+  text-decoration: none;
+  border-bottom: 1px solid #666;
+}
+
+a[href*=dfn-] {
+  border-bottom: 1px dotted #ccc;
+}
