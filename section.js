@@ -32,8 +32,10 @@ limitations under the License.
       this.sec_num = sec_num + '';
       var child_index = 1;
       // Assume there aren't any elements between spec-section levels.
-      for (var child = this.firstChild; child; child = child.nextSibling) {
-        if (child instanceof SpecSectionElement) {
+      for (var child = this.firstElementChild;
+           child;
+           child = child.nextElementSibling) {
+        if (child.tagName.toUpperCase() == "SPEC-SECTION") {
           child.update_sec_nums(this.sec_num + '.' + (child_index++));
         }
       }
