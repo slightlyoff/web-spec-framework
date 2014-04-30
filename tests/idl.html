@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <script src="../bower_components/platform/platform.js"></script>
+  <link rel="import" href="../framework.html"/>
+</head>
+<body>
+<spec-clause id="introduction">
+  <h1>Introduction</h1>
+
+  <spec-section id="about">
+    <h1>BLAH BLAH BLAH</h1>
+
+<spec-idl>[Constructor()] // no-op constructor
+interface <dfn id="service-worker-interface" title="ServiceWorker">ServiceWorker</dfn> : <a href="http://goo.gl/mkHcfY">Worker</a> {
+  readonly attribute DOMString scope;
+  readonly attribute DOMString url;
+  readonly attribute <a href="#service-worker-state-enum">ServiceWorkerState</a> state;
+
+  // event
+  attribute <a href="http://goo.gl/3nnYrx">EventHandler</a> onstatechange;
+};
+
+enum <dfn id="service-worker-state-enum" title="State">ServiceWorkerState</dfn> {
+  "installing",
+  "installed",
+  "activating",
+  "activated",
+  "redundant"
+};</spec-idl>
+
+<br>
+<br>
+
+<spec-idl>[Constructor()]
+interface Thinger: <a href="http://goo.gl/mkHcfY">Worker</a> {
+};</spec-idl>
+
+  </spec-section>
+
+</spec-clause>
+</body>
+</html>
+
