@@ -13,26 +13,5 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-<polymer-element name="spec-idl" noscript>
-  <template>
-    <style>
-      :host { display: block }
-      :host(.inline) { display: inline }
-
-      pre {
-          background-color: #eee;
-          padding: 0.5em 1em 0.5em 1em;
-          margin: 0;
-          border: none;
-      }
-
-      code {
-          background-color: #eee;
-          font-family: 'Droid Sans Mono', monospace;
-          font-size: 0.8em;
-      }
-
-    </style>
-<pre><code><content></content></code></pre>
-  </template>
+<polymer-element name="spec-idl" class="idl" extends="spec-code" noscript>
 </polymer-element>
