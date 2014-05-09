@@ -13,13 +13,26 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-<link rel="stylesheet" href="base.css" shim-shadowdom>
-<script src="promise-0.1.1.min.js"></script>
-<link rel="import" href="bower_components/polymer/polymer.html">
-<link rel="import" href="section.html">
-<link rel="import" href="clause.html">
-<link rel="import" href="algorithm.html">
-<link rel="import" href="code.html">
-<link rel="import" href="idl.html">
-<link rel="import" href="toc.html">
-<script src="include.js"></script>
+<polymer-element name="spec-code" noscript>
+  <template>
+    <style>
+      :host { display: block }
+      :host(.inline) { display: inline }
+
+      pre {
+          background-color: #eee;
+          padding: 0.5em 1em 0.5em 1em;
+          margin: 0;
+          border: none;
+      }
+
+      code {
+          background-color: #eee;
+          font-family: 'Droid Sans Mono', monospace;
+          font-size: 0.8em;
+      }
+
+    </style>
+<pre><code><content></content></code></pre>
+  </template>
+</polymer-element>
