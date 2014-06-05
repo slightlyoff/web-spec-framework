@@ -1,0 +1,3 @@
+[submodule "third_party/webidl2.js"]
+	path = third_party/webidl2.js
+	url = https://github.com/darobin/webidl2.js.git
