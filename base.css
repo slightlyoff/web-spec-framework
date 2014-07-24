@@ -59,7 +59,6 @@ a {
 code {
   background-color: #eee;
   font-family: 'Droid Sans Mono', monospace;
-  font-size: 0.8em;
 }
 
 body > pre.prettyprint,
@@ -129,6 +128,34 @@ dt, dd {
   margin-bottom: 0;
 }
 
+.fixme {
+    display: block;
+    padding: 10px 0 0 20px;
+    border-left: 5px solid #E05252;
+}
+
+
+.fixme:before {
+    content: 'To be addressed';
+    float: right;
+    display: block;
+    padding: 2px 10px;
+    background-image: -webkit-linear-gradient(top left, #FFFFFF 0%, #FBE9E9 100%);
+    background-image: linear-gradient(to bottom right, #FFFFFF 0%, #FBE9E9 100%);
+    font-size: 0.9em;
+}
+
+.note {
+    color: green;
+    font-weight: bold;
+    font-style: italic;
+    padding-left: 2em;
+}
+
+.note:before {
+    content: "Note: ";
+}
+
 .warning:before {
   content: "WARNING: ";
   font-weight: bold;
@@ -147,6 +174,10 @@ dfn {
   background-color: #f9f9f9;
   padding: 0 2px;
   outline: 1px solid #eee;
+}
+
+dfn > code {
+  background-color: transparent;
 }
 
 dfn.no-references {
