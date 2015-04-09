@@ -272,3 +272,9 @@ spec-clause code {
   font-family: 'Droid Sans Mono', monospace;
   font-size: 1.0em;
 }
+em.rfc2119 {
+  text-transform:     lowercase;
+  font-variant:       small-caps;
+  font-style:         normal;
+  color:              #900;
+}
