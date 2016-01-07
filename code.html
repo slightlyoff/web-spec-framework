@@ -13,7 +13,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-<polymer-element name="spec-code" noscript>
+<polymer-element name="spec-code" attributes="class" noscript>
   <template>
     <style>
       :host { display: block }
@@ -34,6 +34,6 @@ limitations under the License.
       }
 
     </style>
-<pre><code><content></content></code></pre>
+<pre class="{{class}}"><code><content></content></code></pre>
   </template>
 </polymer-element>
